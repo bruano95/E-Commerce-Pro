@@ -8,15 +8,25 @@ router.get('/', async (req, res) => {
   const productsData = await Product.findAll({
     include: {
       model: Category, Tag,
-      as: ''
+      through: ProductTag,
+      as: 'tags'
     }
   })
+  res.status(200).json(productsData)
   // find all products
   // be sure to include its associated Category and Tag data
 });
 
 // get one product
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
+  const productByid = await Product.findByPk(req.params.id, {
+    include: {
+      model: Category, Tag,
+      through: ProductTag,
+      as: 'tags'
+    }
+  })
+  res.status(200).json(productByid)
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
 });
@@ -95,7 +105,13 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
+  const deleteProduct = await Product.destroy({
+    where: {
+      id: req.params.id,
+    }
+  })
+  res.status(200).json(deleteProduct)
   // delete one product by its `id` value
 });
 
