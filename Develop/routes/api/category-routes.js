@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
   const categoryByid = await Category.findByPk(req.params.id, {
     include: {
       model: Product,
-      as: 'category_id'
+      // as: 'category_id'
     }
   })
   res.status(200).json(categoryByid)

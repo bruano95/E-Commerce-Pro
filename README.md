@@ -14,10 +14,10 @@
   ## DESCRIPTION
   ### This application provides a complete back-end for an e-commerce site. Using express.js and sequelize allowed for the application to interact with the database. By updating the starter code and fixing the models and routes files, the application had useful and correct processes.
 
-  ### Walkthrough video: 
+  ### Walkthrough video: https://drive.google.com/file/d/1qt6Trz7NLpT4kH4CoFQPCP7dCfEryXwX/view
 
   ## INSTALLATION
-  ### In order to install this application, the user must first clone the repository to their local device. After doing so, the user has complete access to the application.
+  ### In order to install this application, the user must first clone the repository to their local device. After doing so, the user has complete access to the application. 
 
   ## USAGE
   ### This application is used through insomnia to understand if the routes are working correctly. The user will check each get post and push route to understand if these codes are written correctly.  
